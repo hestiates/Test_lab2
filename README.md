@@ -3,4 +3,4 @@
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=hestiates_Test_lab2&metric=bugs)](https://sonarcloud.io/summary/new_code?id=hestiates_Test_lab2)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=hestiates_Test_lab2&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=hestiates_Test_lab2)
 [![Coverage Status](https://coveralls.io/repos/github/hestiates/Test_lab2/badge.svg?branch=main)](https://coveralls.io/github/hestiates/Test_lab2?branch=main)  
-https://coveralls.io/repos/github/hestiates/Test_lab2/badge.svg?branch=main(Coverage Status)!:https://coveralls.io/github/hestiates/Test_lab2?branch=main&service=github
+https://coveralls.io/repos/github/hestiates/Test_lab2/badge.svg?branch=main&service=github
