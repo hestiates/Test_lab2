@@ -35,4 +35,5 @@ void load(text txt, char *filename)
       	append_line(txt, buf);
     }
         printf ("Load file successeed!\n");
+    fclose(f);
 }
