@@ -326,4 +326,62 @@ TEST(paste_n, suite2)
     ASSERT_EQ("", output);
 }
 
+/*--mklb--*/
+TEST(mklb, suite1) {
+    text txt = create_text();
+    load(txt, file);
+
+    mklb(txt,2);
+
+    testing::internal::CaptureStdout();
+    show(txt);
+    std::string output = testing::internal::GetCapturedStdout();
+
+    ASSERT_EQ("weq15h1c1\n"
+              "|13r3sag\n\n"
+
+              "43vt24v1qwerwqr\n"
+              "51523 asf 1 5 asd 3\n", output);
+
+    remove_all(txt);
+}
+
+TEST(mklb, suite2) {
+    text txt = create_text();
+    load(txt, file);
+
+    mklb(txt,-10);
+
+    testing::internal::CaptureStdout();
+    show(txt);
+    std::string output = testing::internal::GetCapturedStdout();
+
+    ASSERT_EQ("|weq15h1c1\n"
+              "13r3sag\n\n"
+
+              "43vt24v1qwerwqr\n"
+              "51523 asf 1 5 asd 3\n", output);
+
+    remove_all(txt);
+}
+
+TEST(mklb, suite3) {
+    text txt = create_text();
+    load(txt, file);
+
+    mklb(txt,15);
+
+    testing::internal::CaptureStdout();
+    show(txt);
+    std::string output = testing::internal::GetCapturedStdout();
+
+    ASSERT_EQ("weq15h1c1\n"
+              "13r3sag\n\n"
+
+              "43vt24v1qwerwqr\n"
+              "|51523 asf 1 5 asd 3\n", output);
+
+    remove_all(txt);
+}
+
 #endif // EQTEST_H
