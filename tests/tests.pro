@@ -23,6 +23,7 @@ HEADERS += tests.h \
 
 SOURCES += main.cpp \
     ../app/move.c \
+    ../app/mklb.c \
     ../app/show.c \
     ../app/load.c \
     ../app/showdigitsonly.c \
