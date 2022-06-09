@@ -9,7 +9,7 @@
 
 ## Ошибка №2
 Описание: Функция paste_n отсутствует проверка на пустой файл.  
-Тест: suite3 
+Тест: suite3  
 Входные данные: Пустой файл.  
 Ожидаемый результат: There are already no any lines in the text!  
 Фактический результат: Segmentation fault
