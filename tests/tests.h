@@ -202,9 +202,9 @@ TEST(save, suite2) {
     load(txt, file);
     append_line(txt, "aaa.");
 
-    testing::internal::CaptureStdout();
+    testing::internal::CaptureStderr();
     save (txt, NULL);
-    std::string output = testing::internal::GetCapturedStdout();
+    std::string output = testing::internal::GetCapturedStderr();
 
     ASSERT_EQ("The file (null) cannot be opened\n", output);
 
@@ -216,9 +216,9 @@ TEST(save, suite3) {
     load(txt, file);
     append_line(txt, file);
 
-    testing::internal::CaptureStdout();
+    testing::internal::CaptureStderr();
     save (NULL, "text_test2.txt");
-    std::string output = testing::internal::GetCapturedStdout();
+    std::string output = testing::internal::GetCapturedStderr();
 
     ASSERT_EQ("There are already no any lines in the text!\n", output);
 
@@ -229,9 +229,9 @@ TEST(save, suite4) {
     text txt = create_text();
     load(txt, empty_file);
 
-    testing::internal::CaptureStderr();
+    testing::internal::CaptureStdout();
     save (txt, "empty1.txt");
-    std::string output = testing::internal::GetCapturedStderr();
+    std::string output = testing::internal::GetCapturedStdout();
 
     ASSERT_EQ("", output);
 
