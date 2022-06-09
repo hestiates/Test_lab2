@@ -220,7 +220,7 @@ TEST(save, suite3) {
     save (NULL, "text_test2.txt");
     std::string output = testing::internal::GetCapturedStdout();
 
-    ASSERT_EQ("", output);
+    ASSERT_EQ("There are already no any lines in the text!\n", output);
 
     remove_all(txt);
 }
