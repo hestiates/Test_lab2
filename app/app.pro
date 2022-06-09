@@ -8,6 +8,7 @@ SOURCES += editor.c \
     move.c \
     save.c \
     show.c \
+    mklb.c \
     append_line.c \
     process_forward.c \
     create_text.c \
