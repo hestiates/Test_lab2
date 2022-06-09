@@ -206,7 +206,7 @@ TEST(save, suite2) {
     save (txt, NULL);
     std::string output = testing::internal::GetCapturedStderr();
 
-    ASSERT_EQ("The file (null) can't be opened\n", output);
+    ASSERT_EQ("File (null) can't be opened\n", output);
 
     remove_all(txt);
 }
