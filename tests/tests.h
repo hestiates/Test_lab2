@@ -310,20 +310,51 @@ TEST(paste_n, suite1)
         s[i] = 'a';
     }
     s[256] = '\0';
-    testing::internal::CaptureStderr();
+    testing::internal::CaptureStdout();
     paste_n(txt, s);
-    std::string output = testing::internal::GetCapturedStderr();
-    ASSERT_EQ("", output);
+    std::string output = testing::internal::GetCapturedStdout();
+    ASSERT_EQ("Line overbuff\n", output);
 }
 
 TEST(paste_n, suite2)
 {
     text txt = create_text();
     load(txt, file);
+    testing::internal::CaptureStdout();
+    paste_n(txt, "s2 ample");
+    std::string output = testing::internal::GetCapturedStdout();
+    ASSERT_EQ("weq15h1c1\n"
+              "13r3sag\n\n"
+
+              "43vt24v1qwerwqr\n"
+              "51523 asf 1 5 asd 3|\n"
+              "s2 ample\n", output);
+}
+
+TEST(paste_n, suite3)
+{
+    text txt = create_text();
+    load(txt, empty_file);
     testing::internal::CaptureStderr();
     paste_n(txt, "s2 ample");
     std::string output = testing::internal::GetCapturedStderr();
     ASSERT_EQ("", output);
+}
+
+TEST(paste_n, suite4)
+{
+    text txt = create_text();
+    load(txt, file);
+    m(txt, 0, 0);
+    testing::internal::CaptureStdout();
+    paste_n(txt, "s2 ample");
+    std::string output = testing::internal::GetCapturedStdout();
+    ASSERT_EQ("|weq15h1c1\n"
+              "s2 ample\n"
+              "13r3sag\n\n"
+
+              "43vt24v1qwerwqr\n"
+              "51523 asf 1 5 asd 3\n", output);
 }
 
 /*--mklb--*/
