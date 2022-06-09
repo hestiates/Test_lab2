@@ -11,19 +11,15 @@ void save(text txt, char *filename)
 {
   FILE *f;
 
-  /* Проверка на запись файла*/
-  if ((f = fopen(filename, "w")) == NULL)
-    {
-      printf("The file %s cannot be opened\n", filename);
-      return;
+  if (txt == NULL || txt->length == 0) {
+        fprintf(stderr, "The text doesn't exist\n");
+        return;
     }
 
-  /* Проверяем, имеется ли текст */
-  if (txt == NULL || txt->length == 0)
-    {
-      printf("There are already no any lines in the text!\n");
-      return;
-    } 
+    if ((f = fopen(filename, "w")) == NULL) {
+        fprintf(stderr, "File %s can't be opened\n", filename);
+        return;
+    }
     
     /* Текст ненулевой длины должен содержать хотя бы одну строку */
     assert(txt->begin != NULL && txt->end != NULL);
