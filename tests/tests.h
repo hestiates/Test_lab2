@@ -336,11 +336,10 @@ TEST(paste_n, suite3)
 {
     text txt = create_text();
     load(txt, empty_file);
+    testing::internal::CaptureStderr();
     paste_n(txt, "s2 ample");
-    testing::internal::CaptureStdout();
-    show(txt);
-    std::string output = testing::internal::GetCapturedStdout();
-    ASSERT_EQ("", output);
+    std::string output = testing::internal::GetCapturedStderr();
+    ASSERT_EQ("There are already no any lines in the text!\n", output);
 }
 
 TEST(paste_n, suite4)
