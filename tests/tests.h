@@ -337,9 +337,9 @@ TEST(paste_n, suite3)
     text txt = create_text();
     load(txt, empty_file);
     paste_n(txt, "s2 ample");
-    testing::internal::CaptureStderr();
+    testing::internal::CaptureStdout();
     show(txt);
-    std::string output = testing::internal::GetCapturedStderr();
+    std::string output = testing::internal::GetCapturedStdout();
     ASSERT_EQ("", output);
 }
 
