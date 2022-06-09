@@ -6,6 +6,13 @@
 
 void paste_n(text txt, const char *inputtext)
 {
+    
+    if (txt == NULL || txt->length == 0)
+    {
+        fprintf(stderr, "There are already no any lines in the text!\n");
+        return;
+    }
+    
     assert(inputtext != NULL);
 
     node *str;
