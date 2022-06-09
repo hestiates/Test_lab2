@@ -310,9 +310,8 @@ TEST(paste_n, suite1)
         s[i] = 'a';
     }
     s[256] = '\0';
-    paste_n(txt, s);
     testing::internal::CaptureStdout();
-    show(txt);
+    paste_n(txt, s);
     std::string output = testing::internal::GetCapturedStdout();
     ASSERT_EQ("Line overbuff\n", output);
 }
