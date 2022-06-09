@@ -96,7 +96,7 @@ int main()
                     if ((arg = strtok(NULL, " \n")) == NULL) {
                         fprintf(stderr, "Usage: mklb line\n");
                     } else {
-                        m(txt, atoi(arg), 0);
+                        mklb(txt, atoi(arg));
                         show(txt);
                     }
                     continue;
