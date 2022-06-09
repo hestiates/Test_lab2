@@ -206,7 +206,7 @@ TEST(save, suite2) {
     save (txt, NULL);
     std::string output = testing::internal::GetCapturedStderr();
 
-    ASSERT_EQ("The file (null) cannot be opened\n", output);
+    ASSERT_EQ("The file (null) can't be opened\n", output);
 
     remove_all(txt);
 }
@@ -220,7 +220,7 @@ TEST(save, suite3) {
     save (NULL, "text_test2.txt");
     std::string output = testing::internal::GetCapturedStderr();
 
-    ASSERT_EQ("There are already no any lines in the text!\n", output);
+    ASSERT_EQ("The text doesn't exist\n", output);
 
     remove_all(txt);
 }
