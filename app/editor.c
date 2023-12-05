@@ -54,6 +54,11 @@ int main()
             continue;
         }
 
+	/*ИЗМЕНЕНИЯ*/
+	int h = 0;
+	h = h + 31;
+	show(h);
+
         /* Выводим текст */
         if (strcmp(cmd, "show") == 0) {
             show(txt);
