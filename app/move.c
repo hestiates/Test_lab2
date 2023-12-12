@@ -34,7 +34,7 @@ void m(text txt, int line, int pos)
 
         while(current)
         {
-            if (k == line - 3)
+            if (k == line)
             {
                 txt->cursor->line = current;
                 break;
